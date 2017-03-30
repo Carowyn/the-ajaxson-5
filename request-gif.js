@@ -9,7 +9,6 @@ $(document).ready(function() {
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
 });
 
-
 /**
  * sends an asynchronous request to Giphy.com aksing for a random GIF using the
  * user's search term (along with "jackson 5")
@@ -76,8 +75,14 @@ function fetchAndDisplayGif(event) {
             $("#gif").attr("hidden", false);  //makes sure that the hidden property is false
             $("hr").attr("hidden", false);  //shows the <hr> element
             $("#form-gif-request input").prop("readonly", "readonly");  //sets the form to ReadOnly so captcha and tagcannot be changed, if change is wanted, must reset page
-            $("#tag").css("background-color", "#000000");
-            $("#captcha").css("background-color", "#000000");
+            $("#tag").css({
+                "background-color": "#000000",
+                "border": "5px double #002b1c"
+            });
+            $("#captcha").css({
+                "background-color": "#000000",
+                "border": "5px double #002b1c"
+            });
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function

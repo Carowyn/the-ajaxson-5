@@ -12,6 +12,9 @@ h1 {
     color: #8bffd5;
     width: 80%;
     margin: 2% auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-radius: 25%;
 }
 
 footer {
@@ -19,8 +22,11 @@ footer {
     color: #8bffd5;
     width: 80%;
     margin: 2% auto;
-    padding: 2%;
+    padding: 3%;
+    border-radius: 25%;
+    text-align: center;
 }
+
 
 form {
     width: 75%;
@@ -54,7 +60,7 @@ button {
 
 #tagging {
     background-color: #88675a;
-    border-radius: 15%;
+    border-radius: 25%;
     padding: 2.5% 0 2.5% 0;
     margin-bottom: 5%;
     width: 95%;
@@ -63,7 +69,7 @@ button {
 
 #validation {
     background-color: #88675a;
-    border-radius: 15%;
+    border-radius: 25%;
     padding: 2.5% 0 .5% 0;
     margin-bottom: 5%;
     width: 95%;
@@ -71,6 +77,9 @@ button {
 #tag {
     text-transform: uppercase;
     width: 50%;
+    border: 5px double #0f3700;
+    padding: 1%;
+    border-radius: 25%;
 }
 
 #tag-label {
@@ -83,7 +92,14 @@ button {
 }
 
 #captcha {
-    width: 8%;
+    width: 10%;
+    padding: 1%;
+    border: 5px double #0f3700;
+    border-radius: 25%;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 #captcha-input {
@@ -100,6 +116,7 @@ button {
     font-size: 1.8em;
     color: #05ff00;
     font-weight: bold;
+    padding-bottom: 2%;
 }
 
 #feedback {
@@ -110,20 +127,49 @@ button {
     background-color: #000000;
     width: 75%;
     margin: 0 auto;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-radius: 25%;
 }
 
 #submit {
     font-size: 1.1em;
     padding: 1%;
+    height: 75%;
+    width: 15%;
+    border: 4px outset #247e03;
+    border-radius: 25%;
+}
+
+#submit:hover {
+    height: 100%;
+    width: 18%;
+    background-color: #340000;
+    color: #26cd91;
+    border-color: #018549;
 }
 
 #reset-button {
     font-size: 1.1em;
     padding: 1%;
     margin-bottom: 0;
+    height: 75%;
+    width: 15%;
+    border: 4px outset #247e03;
+    border-radius: 25%;
+}
+
+#reset-button:hover {
+    height: 100%;
+    width: 18%;
+    background-color: #340000;
+    color: #26cd91;
+    border-color: #018549;
 }
 
 #gif {
-    border: 5px solid black;
+    border: 5px double #1c1c1c;
     border-radius: 15px;
+    margin-bottom: 5%;
+    margin-top: 3%;
 }
