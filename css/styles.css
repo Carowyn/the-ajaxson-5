@@ -1,0 +1,129 @@
+body {
+    font-family: 'Averia Sans Libre', cursive;
+    background-color: #8c7661;
+    color: #002b1c;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: bolder;
+    text-align: center;
+    background: #1d0b00;
+    color: #8bffd5;
+    width: 80%;
+    margin: 2% auto;
+}
+
+footer {
+    background: #1d0b00;
+    color: #8bffd5;
+    width: 80%;
+    margin: 2% auto;
+    padding: 2%;
+}
+
+form {
+    width: 75%;
+    text-align: center;
+    margin: 2% auto 0 auto;
+    display: block;
+    padding: 1%;
+}
+
+input {
+    background-color: #1d0b00;
+    color: #8bffd5;
+}
+
+button {
+    background-color: #1d0b00;
+    color: #8bffd5;
+}
+
+.captcha-class {
+    padding: 3%;
+}
+
+#prove {
+    padding-bottom: 1%;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 1.6em;
+    color: #013926;
+}
+
+#tagging {
+    background-color: #88675a;
+    border-radius: 15%;
+    padding: 2.5% 0 2.5% 0;
+    margin-bottom: 5%;
+    width: 95%;
+    margin-top: 0;
+}
+
+#validation {
+    background-color: #88675a;
+    border-radius: 15%;
+    padding: 2.5% 0 .5% 0;
+    margin-bottom: 5%;
+    width: 95%;
+}
+#tag {
+    text-transform: uppercase;
+    width: 50%;
+}
+
+#tag-label {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#tag-input {
+    font-size: 1.3em;
+}
+
+#captcha {
+    width: 8%;
+}
+
+#captcha-input {
+    font-size: 1.3em;
+}
+
+#captcha-label {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#loader {
+    font-style: italic;
+    font-size: 1.8em;
+    color: #05ff00;
+    font-weight: bold;
+}
+
+#feedback {
+    font-style: italic;
+    font-size: 5em;
+    color: #ff0000;
+    font-weight: bold;
+    background-color: #000000;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#submit {
+    font-size: 1.1em;
+    padding: 1%;
+}
+
+#reset-button {
+    font-size: 1.1em;
+    padding: 1%;
+    margin-bottom: 0;
+}
+
+#gif {
+    border: 5px solid black;
+    border-radius: 15px;
+}

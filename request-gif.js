@@ -1,4 +1,8 @@
-
+//resets the entire page so that validation is required again.
+$("#reset-button").click(function() {
+    window.location.reload(true);
+    console.log("reset?")
+});
 
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
@@ -12,6 +16,7 @@ $(document).ready(function() {
  *
  * upon receiving a response from Giphy, updates the DOM to display the new GIF
  */
+
 function fetchAndDisplayGif(event) {
 
     // This prevents the form submission from doing what it normally does: send a request (which would cause our page to refresh).
@@ -19,7 +24,28 @@ function fetchAndDisplayGif(event) {
     event.preventDefault();
 
     // get the user's input text from the DOM
-    var searchQuery = $("#form-gif-request:input").val(); // TODO/DONE should be e.g. "dance"
+        var searchQuery = $("#tag").val(); // TODO/DONE should be e.g. "dance"
+        var captcha = $("#captcha").val();
+
+//Validates the captch, if it isn't met, then will not return a gif.
+    if (captcha != 5) {
+        $("#feedback").text("No GIFs for you!!!");
+        $("#captcha-input").addClass("form-group has-error has-feedback")
+        console.log(captcha);
+        console.log(searchQuery);
+        setGifLoadedStatus(false);
+        $("#captcha").css({
+            "background-color": "#960000",
+            "border": "4px solid black",
+            "color": "#fcff5e"
+        });
+        $("#captcha-label").css("color", "#730000")
+        return;
+    }
+    else {
+        console.log(captcha);
+        console.log(searchQuery);
+    }
 
     // configure a few parameters to attach to our request
     var params = {
@@ -35,34 +61,45 @@ function fetchAndDisplayGif(event) {
             // if the response comes back successfully, the code in here will execute.
 
             // jQuery passes us the `response` variable, a regular javascript object created from the JSON the server gave us
-            console.log("we received a response!");
+            console.log("We received a response!");
             console.log(response);
 
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             var image = $("#gif");
             var downloadImage = response.data.image_url;
-
-            image.src = downloadImage;
+            $("#gif").attr("src", downloadImage)
 
             // 2. hide the feedback message and display the image
-            $("#gif").attr("hidden", false);
-
+            $("#gif").show();  //shows the gif
+            $("#feedback").hide();  //hides the error messages
+            $("#gif").attr("hidden", false);  //makes sure that the hidden property is false
+            $("hr").attr("hidden", false);  //shows the <hr> element
+            $("#form-gif-request input").prop("readonly", "readonly");  //sets the form to ReadOnly so captcha and tagcannot be changed, if change is wanted, must reset page
+            $("#tag").css("background-color", "#000000");
+            $("#captcha").css("background-color", "#000000");
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
 
             // give the user an error message
-            $("#feedback").text("Sorry, could not load GIF. Try again!");
+            $("#feedback").text("Sorry, could not load your GIF. Please try again!");
             setGifLoadedStatus(false);
         }
     });
 
     // TODO
     // give the user a "Loading..." message while they wait
+    $("#submit").click(function() {
+        $(".loader").css("display", "block");
+        $(".loader").text("Patience! Your GIF is on its way!");
+    });
+
+    $("#gif").load(function() {
+    $(".loader").fadeOut("slow");
+    })
 
 }
-
 
 /**
  * toggles the visibility of UI elements based on whether a GIF is currently loaded.
